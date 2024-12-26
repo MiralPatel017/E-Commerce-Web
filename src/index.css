@@ -10,3 +10,21 @@
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
 }
+
+.cursive{
+    font-family: 'Great Vibes', cursive;
+}
+
+.rot:hover .rotsub{
+    transform: rotate(45deg) scale(1.1) translateX(2px);
+    font-size: 21px;
+}
+
+
+/* mobile screen */
+@media (max-width: 768px) {
+    .rot:hover .rotsub{
+        transform: rotate(45deg) scale(1.1) translateX(4px);
+        font-size: 18px;
+    }
+}

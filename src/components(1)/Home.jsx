@@ -63,9 +63,6 @@ const Home = ({ darkMode }) => {
               <p className="mb-2 font-semibold">{product.title}</p>
               <div className="flex gap-x-10">
                 <p className="font-semibold">{product.price}</p>
-                <p className="text-[#feb249] font-bold text-[30px]">
-                  { product.stars }
-                </p>
                 <button className="border k p-[7px] font-bold rounded-lg text-[14px] ml-auto">
                   View More
                 </button>

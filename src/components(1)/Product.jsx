@@ -62,9 +62,9 @@ const Product = ({ darkMode }) => {
 
       {/* View Product Details */}
       {viewProduct && (
-        <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center bg-opacity-85"}>
+        <div className={darkMode ? " text-white max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex bg-opacity-90" : "bg-black max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center bg-opacity-85"}>
 
-          <div className='w-full dark:bg-black pt-auto dark:text-white rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-5 dark:bg-opacity-100  max-w-[800px] bg-opacity-100  justify-center items-center max-md:mt-[500px] px-6 max-md:px-2 mx-auto '>
+          <div className='w-full dark:bg-black dark:text-white rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-5 dark:bg-opacity-100  max-w-[800px] bg-opacity-100  justify-center items-center max-md:mt-[500px] px-6 max-md:px-2 mx-auto '>
 
             {/* close button */}
             <div className='pl-[90%] max-md:pl-[90%] md:mt-[20px]'>
@@ -92,7 +92,7 @@ const Product = ({ darkMode }) => {
                 </p>
 
                 {/* title of product */}
-                <h2 className='max-md:text-2xl text-[20px] font-bold py-[5px]'>
+                <h2 className='max-md:text-2xl text-[30px] font-bold py-[5px]'>
                   {viewProduct.fullname}
                 </h2>
 
@@ -174,7 +174,7 @@ const Product = ({ darkMode }) => {
                         <p className='mt-2'>
                           Upto ₹2,000.00 discount on select…
                         </p>
-                        <p className='text-[#007A8E] hover:underline flex gap-1 mt-3'>
+                        <p className='text-[#007A8E] hover:underline  flex gap-1 mt-8'>
                           5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
                         </p>
                       </div>
@@ -191,7 +191,7 @@ const Product = ({ darkMode }) => {
                         <p className='mt-2'>
                           Get GST invoice and save up to 28% on…
                         </p>
-                        <p className='text-[#007A8E] hover:underline  flex gap-1 mt-3'>
+                        <p className='text-[#007A8E] hover:underline  flex gap-1 mt-8'>
                           5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
                         </p>
                       </div>

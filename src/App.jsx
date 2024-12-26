@@ -6,7 +6,8 @@ import AboutUs from "./components/AboutUs";
 import ContectUs from "./components/ContectUs"
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
-import DetailsPage from "./components/DetailsPage";
+import DetailsPage from "./components/ProductDetails";
+import HomePage from "./components/HomePage";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -19,15 +20,16 @@ const App = () => {
       </div>
 
       {/* Main Content */}
-      <div className="">
+      <main>
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} />} />
           <Route path="/AboutUs" element={<AboutUs darkMode={darkMode} />} />
           <Route path="/ContectUs" element={<ContectUs darkMode={darkMode} />} />
           <Route path="/Product" element={<Product darkMode={darkMode} />} />
           <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} />
+          <Route path="/HomePage" element={<HomePage darkMode={darkMode} />} />
         </Routes>
-         </div>
+      </main>
     </div>
   );
 };
