@@ -43,7 +43,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
       {isMenuOpen && (
         <ul
-          className={`absolute top-[60px] bgblurenav right-0 w-[90%] h-[1250%] z-10 flex flex-col gap-4 py-4 text-center transform transition-transform duration-700 ease-in-out 
+          className={`absolute bg-black top-[60px] bgblurenavul right-0 w-[80%] h-[1250%] z-10 flex flex-col gap-4 py-4 text-center transform transition-transform duration-700 ease-in-out 
             ${isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >

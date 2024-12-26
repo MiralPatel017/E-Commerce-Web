@@ -20,11 +20,21 @@
     font-size: 21px;
 }
 
+.bgblurenavul{
+    /* background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px); */
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(20px);
+}
 
 /* mobile screen */
 @media (max-width: 768px) {
     .rot:hover .rotsub{
         transform: rotate(45deg) scale(1.1) translateX(4px);
         font-size: 18px;
+    }
+    .bgblurenav{
+        background-color: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(3px);
     }
 }
