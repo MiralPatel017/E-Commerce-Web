@@ -87,7 +87,7 @@ const Product = ({ darkMode }) => {
             </div>
           ))}
         </div>
-        
+
         <div className="grid md:gap-10 grid-cols-4 max-lg:grid-cols-2 max-md:px-2 pt-[50px] max-w-[1440px] w-full md:mx-auto">
           {filteredItems.map((product, id) => (
             <div key={id} className='max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full '>
@@ -132,9 +132,9 @@ const Product = ({ darkMode }) => {
 
       {/* View Product Details */}
       {viewProduct && (
-        <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center bg-opacity-85"}>
+        <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center md:bg-opacity-85"}>
 
-          <div className='w-full dark:bg-black pt-auto dark:text-white rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-5 dark:bg-opacity-100  max-w-[800px] bg-opacity-100  justify-center items-center max-md:mt-[400px] px-6 max-md:px-2 mx-auto '>
+          <div className='w-full dark:bg-black pt-auto dark:text-white rounded-[20px] md:mt-[30px] max-md:rounded-none dark:bg-opacity-100 max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
 
             {/* close button */}
             <div className='pl-[90%] max-md:pl-[90%] md:mt-[20px]'>
