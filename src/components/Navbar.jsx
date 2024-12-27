@@ -15,12 +15,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
   return (
     <nav className="bg-black z-10 bgblurenav fixed top-0 text-white w-full h-[60px] flex items-center px-4 md:px-10">
-      <div className="logo">
+      <div className="logo md:left-[100px] md:relative">
         <img src="letter-m.png" alt="logo" className="w-[40px] bg-white rounded-full border-transparent" />
       </div>
 
       <ul className="hidden md:flex gap-10 text-center mx-auto items-center">
-        <li><Link to="/HomePage">Home Page</Link></li>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/AboutUs">About Us</Link></li>
         <li><Link to="/Product">Product</Link></li>
@@ -28,7 +27,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
       </ul>
 
       <button
-        className="text-[25px] max-md:hidden pr-20"
+        className="text-[25px] max-md:hidden relative right-[100px]"
         onClick={() => setDarkMode(!darkMode)}
       >
         {darkMode ? <LuSun /> : <FaMoon className="text-[20px]" />}
@@ -47,13 +46,16 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             ${isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
-          <li><Link to="/HomePage" onClick={() => setIsMenuOpen(false)}>Home Page</Link></li>
           <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+
           <li><Link to="/AboutUs" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+
           <li><Link to="/Product" onClick={() => setIsMenuOpen(false)}>Product</Link></li>
+
           <li><Link to="/ContectUs" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
+
           <li onClick={() => setIsMenuOpen(false)}>
-            <button className="text-[25px] rounded-full" onClick={() => { setDarkMode(!darkMode) }}>
+            <button className="text-[25px] w-fit rounded-full" onClick={() => { setDarkMode(!darkMode) }}>
               {darkMode ? <LuSun /> : <FaMoon className="text-[20px]" />}
             </button>
           </li>
