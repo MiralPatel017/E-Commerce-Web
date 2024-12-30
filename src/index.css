@@ -21,10 +21,9 @@
 }
 
 .bgblurenavul{
-    /* background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px); */
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0);
     backdrop-filter: blur(20px);
+    z-index: 100;
 }
 
 /* mobile screen */
@@ -37,4 +36,16 @@
         background-color: rgba(0, 0, 0, 0.75);
         backdrop-filter: blur(3px);
     }
+}
+
+.bggrd{
+    background:radial-gradient(circle at top right, #112786, transparent 30%),
+    radial-gradient(circle at bottom left, #112786, transparent 30%),
+    linear-gradient(to bottom right,#1E1B4B, #1E1B4B); 
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.shadowbox{
+    box-shadow: rgba(14, 30, 37, 0) 0px 2px 4px 0px, rgba(14, 30, 37, 0.25) 0px 2px 16px 0px;
 }

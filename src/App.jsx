@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Product from "./components/Product";
 import DetailsPage from "./components/ProductDetails";
 import ProductDetails from "./components/ProductDetails";
+// import LoginPage from "./components/LoginPage";
+import LoginAndSignup from "./components/LoginAndSignup";
 
 
 const App = () => {
@@ -15,24 +17,33 @@ const App = () => {
 
   return (
     <div className={darkMode ? "dark dark:bg-black bg-black dark:text-white" : "bg-white text-black dark:bg-black"}>
-      {/* Navbar */}
-      <div className="">
-        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      </div>
+      <div>
+        {/* Navbar */}
+        <div className="">
+          <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
 
-      {/* Main Content */}
-      <main className={darkMode ? "bg-black" : " bg-white"}>
-        <Routes className={darkMode ? "bg-black" : " bg-white"}>
-          {/* <Route path="*" element={<Home />} /> */}
-          <Route path="/" element={<Home darkMode={darkMode} />} />
-          <Route path="/AboutUs" element={<AboutUs darkMode={darkMode} />} />
-          <Route path="/ContectUs" element={<ContectUs darkMode={darkMode} />} />
-          <Route path="/Product" element={<Product darkMode={darkMode} />} />
-          <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} />
-          <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
-          {/* <Route path="/NewProductPage" element={<NewProductPage darkMode={darkMode} />} /> */}
-        </Routes>
-      </main>
+        {/* Main Content */}
+        <main className={darkMode ? "bg-black" : " bg-white"}>
+          <Routes className={darkMode ? "bg-black" : " bg-white"}>
+            {/* <Route path="*" element={<Home />} /> */}
+            <Route path="/" element={<Home darkMode={darkMode} />} />
+            <Route path="/AboutUs" element={<AboutUs darkMode={darkMode} />} />
+            <Route path="/ContectUs" element={<ContectUs darkMode={darkMode} />} />
+            <Route path="/Product" element={<Product darkMode={darkMode} />} />
+            <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} />
+            <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
+            {/* <Route path="/LoginAndSignup" element={<LoginAndSignup />} /> */}
+          </Routes>
+        </main>
+      </div>
+      <div>
+        <main>
+          <Routes>
+            <Route path="/LoginAndSignup" element={<LoginAndSignup />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 };
