@@ -74,8 +74,8 @@ const Product = ({ darkMode }) => {
             <div key={index}>
               <button
                 className={`button ${selectedFilter === category
-                  ? "active bg-black text-white dark:bg-white dark:text-black"
-                  : "bg-white text-black dark:text-white dark:bg-black"
+                  ? "active bg-black text-white "
+                  : "bg-white text-black "
                   } ${darkMode
                     ? "text-white md:px-10 md:text-[20px] font-semibold p-3 w-full border-[2.5px] mt-5 rounded-lg border-white"
                     : "bg-white md:px-10 md:text-[20px] font-semibold w-full p-3 border-[2.5px] mt-5 rounded-lg border-gray-900 text-black"
@@ -134,12 +134,12 @@ const Product = ({ darkMode }) => {
       {viewProduct && (
         <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center md:bg-opacity-85"}>
 
-          <div className='w-full dark:bg-black pt-auto dark:text-white rounded-[20px] md:mt-[30px] max-md:rounded-none dark:bg-opacity-100 max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
+          <div className='w-full pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
 
             {/* close button */}
-            <div className='pl-[90%] max-md:pl-[90%] md:mt-[20px]'>
+            <div className='pl-[90%] max-md:pt-[80px] max-md:pl-[90%] md:mt-[20px]'>
               <button
-                className=' bg-red-600 dark:bg-red-600 dark:text-white text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] p-[10px] px-[18px] font-bold hover:bg-red-700 rounded-full mb-[20px]'
+                className=' bg-red-600  text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] p-[10px] px-[18px] font-bold hover:bg-red-700 rounded-full mb-[20px]'
                 onClick={closeModel}
               >
                 X
@@ -196,7 +196,7 @@ const Product = ({ darkMode }) => {
                 {/* offer & price */}
                 <div className=''>
                   <div className=' text-[30px] max-md:mb-[5px]'>
-                    <span className='font-light text-red-700 dark:text-red-700'> -{viewProduct.offers} </span> <span className='font-semibold '> {viewProduct.price} </span>
+                    <span className='font-light text-red-700 '> -{viewProduct.offers} </span> <span className='font-semibold '> {viewProduct.price} </span>
                   </div>
                 </div>
 
@@ -245,7 +245,7 @@ const Product = ({ darkMode }) => {
                         <p className='mt-2 line-clamp-2'>
                           Upto ₹2,000.00 discount on select…
                         </p>
-                        <p className='text-[#007A8E] hover:underline flex gap-1 mt-3'>
+                        <p className='text-indigo-600 hover:underline flex gap-1 mt-3'>
                           5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
                         </p>
                       </div>
@@ -262,7 +262,7 @@ const Product = ({ darkMode }) => {
                         <p className='mt-2 line-clamp-2'>
                           Get GST invoice and save up to 28% on…
                         </p>
-                        <p className='text-[#007A8E] hover:underline  flex gap-1 mt-3'>
+                        <p className='text-indigo-600 hover:underline  flex gap-1 mt-3'>
                           5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
                         </p>
                       </div>
