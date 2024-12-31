@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "build": "^0.1.4",
+    "lottie-react": "^2.4.0",
     "myfirstprojects": "file:",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
