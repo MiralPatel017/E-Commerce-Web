@@ -26,7 +26,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <nav className="bg-black bgblurenav fixed top-0 text-white w-full h-[60px] md:justify-around flex items-center px-4 md:px-10">
+    <nav className="bg-black bgblurenav fixed top-0 text-white w-full h-[60px] md:justify-around flex items-center px-4 md:px-10 z-[50]">
       <div className="logo md:relative">
         <img src="letter-m.png" alt="logo" className="w-[40px] bg-white rounded-full border-transparent" />
       </div>
@@ -47,15 +47,16 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <LiaShoppingCartSolid className="" />
           </button>
         </li>
+        <li>
+          {/* dark and light mode button */}
+          <button
+            className="text-[25px] z-10 max-md:hidden lg:right-[50px]"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? <LuSun /> : <FaMoon className="text-[20px]" />}
+          </button>
+        </li>
       </ul>
-
-      {/* dark and light mode button */}
-      <button
-        className="text-[25px] z-10 max-md:hidden relative lg:right-[50px]"
-        onClick={() => setDarkMode(!darkMode)}
-      >
-        {darkMode ? <LuSun /> : <FaMoon className="text-[20px]" />}
-      </button>
 
       <div className="max-md:flex gap-3 text-[35px] absolute right-[90px]">
 
