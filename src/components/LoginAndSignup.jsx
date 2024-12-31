@@ -14,8 +14,8 @@ const LoginAndSignup = ({ darkMode }) => {
     return (
         <div className=
             {
-                darkMode ? "lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-black max-lg:bg-indigo-950 max-lg:bg-gradient-to-t"
-                    : "lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-black max-lg:bg-indigo-950 max-lg:bg-gradient-to-t"
+                darkMode ? "lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t"
+                    : "lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t"
             }
         >
             <div className="px-2 max-md:px-2 lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t">
@@ -85,7 +85,7 @@ const LoginAndSignup = ({ darkMode }) => {
                             {/* Signup Form */}
                             <div className="back lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t">
                                 <div className="flex items-center justify-center h-screen max-md:px-2 lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t">
-                                    <div className="w-full max-lg:flex-wrap lg:max-w-[1440px] lg:h-[600px] shadowbox flex lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-black max-lg:bg-indigo-950 max-lg:bg-gradient-to-t overflow-hidden">
+                                    <div className="w-full max-lg:flex-wrap lg:max-w-[1440px] lg:h-[600px] shadowbox flex lg:bg-gradient-to-r lg:from-indigo-950 from-50% lg:to-white to-50% max-lg:lg:from-white text-white max-lg:bg-indigo-950 max-lg:bg-gradient-to-t overflow-hidden">
                                         {/* Left Section */}
                                         <div className="lg:w-1/2 max-md:w-full bggrd p-10 flex max-lg:z-[0px] items-center max-md:px-2 justify-center">
                                             <Lottie
