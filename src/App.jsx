@@ -10,6 +10,7 @@ import DetailsPage from "./components/ProductDetails";
 import ProductDetails from "./components/ProductDetails";
 // import LoginPage from "./components/LoginPage";
 import LoginAndSignup from "./components/LoginAndSignup";
+import AddToCartPage from "./components/AddToCartPage";
 
 
 const App = () => {
@@ -33,7 +34,7 @@ const App = () => {
             <Route path="/Product" element={<Product darkMode={darkMode} />} />
             <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} />
             <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
-            {/* <Route path="/LoginAndSignup" element={<LoginAndSignup />} /> */}
+            <Route path="/AddToCartPage" element={<AddToCartPage />} />
           </Routes>
         </main>
       </div>

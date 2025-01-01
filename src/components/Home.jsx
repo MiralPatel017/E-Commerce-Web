@@ -54,6 +54,7 @@ const Home = ({ darkMode }) => {
 
                         <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:w-full max-md:gap-0 gap-[40px]'>
                             {product.filter(item => item.category === "Shirt").slice(0, 4).map((item, index) =>
+                            
                                 <div key={index} className='bgblur max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full'>
                                     <img src={item.imgs} className='rounded-t-[10px] bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' alt="" />
                                     <div className='px-[10px] pt-[10px] pb-[15px] bg-[#F3F3F3] text-black rounded-b-[10px] max-md:w-[96%] max-md:mx-auto border-2 border-[#F3F3F3] max-md:pt-0'>

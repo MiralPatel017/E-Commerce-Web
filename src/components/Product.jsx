@@ -73,17 +73,20 @@ const Product = ({ darkMode }) => {
           {categories.map((category, index) => (
             <div key={index}>
               <button
-                className={`button ${selectedFilter === category
-                  ? "active bg-black text-white "
-                  : "bg-white text-black "
-                  } ${darkMode
-                    ? "text-white md:px-10 md:text-[20px] font-semibold p-3 w-full border-[2.5px] mt-5 rounded-lg border-white"
-                    : "bg-white md:px-10 md:text-[20px] font-semibold w-full p-3 border-[2.5px] mt-5 rounded-lg border-gray-900 text-black"
+                className={`button font-semibold p-3 w-full md:px-10 md:text-[20px] border-[2.5px] mt-5 rounded-lg ${darkMode
+                  ? selectedFilter === category
+                    ? "bg-white text-black border-white"
+                    : "bg-black text-white border-white"
+                  : selectedFilter === category
+                    ? "bg-black text-white border-gray-900"
+                    : "bg-white text-black border-gray-900"
                   }`}
                 onClick={() => handleFilterButtonClick(category)}
               >
                 {category}
               </button>
+
+
             </div>
           ))}
         </div>
@@ -131,156 +134,158 @@ const Product = ({ darkMode }) => {
 
 
       {/* View Product Details */}
-      {viewProduct && (
-        <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center md:bg-opacity-85"}>
+      {
+        viewProduct && (
+          <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center md:bg-opacity-85"}>
 
-          <div className='w-full pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
+            <div className='w-full pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
 
-            {/* close button */}
-            <div className='pl-[90%] max-md:pt-[80px] max-md:pl-[90%] md:mt-[20px]'>
-              <button
-                className=' bg-red-600  text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] p-[10px] px-[18px] font-bold hover:bg-red-700 rounded-full mb-[20px]'
-                onClick={closeModel}
-              >
-                X
-              </button>
-            </div>
-            <div className='overflow-y-auto gap-10 max-md:flex-wrap max-md:justify-center flex'>
-              {/* image */}
-              <div className='w-[40%] my-auto max-md:w-full'>
-                <img src={viewProduct.imgs} alt="" className='w-[400px] rounded-[20px] max-md:w-[190px] max-md:mx-auto' />
-
-                <button className="bg-black text-white mt-5 text-center justify-center flex mx-auto max-md:hidden w-[60%] py-2 rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-white border-2">
-                  Buy Now
+              {/* close button */}
+              <div className='pl-[90%] max-md:pt-[80px] max-md:pl-[90%] md:mt-[20px]'>
+                <button
+                  className=' bg-red-600  text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] p-[10px] px-[18px] font-bold hover:bg-red-700 rounded-full mb-[20px]'
+                  onClick={closeModel}
+                >
+                  X
                 </button>
-
               </div>
+              <div className='overflow-y-auto gap-10 max-md:flex-wrap max-md:justify-center flex'>
+                {/* image */}
+                <div className='w-[40%] my-auto max-md:w-full'>
+                  <img src={viewProduct.imgs} alt="" className='w-[400px] rounded-[20px] max-md:w-[190px] max-md:mx-auto' />
 
-              {/* visite product details */}
-              <div className='w-[60%] max-md:w-full max-md:px-2 max-md:mx-auto text-[18px]'>
-
-                {/* link of product brand */}
-                <p className=' my-[5px] font-semibold text-[gray]'>
-                  visite the {viewProduct.title} Store
-                </p>
-                {/* title of product */}
-                <h2 className='max-md:text-2xl text-[20px] font-bold my-[10px]'>
-                  {viewProduct.fullname}
-                </h2>
-
-                {/* star rating */}
-                <div className='gap-9 flex font-semibold max-md:my-[10px] max-md:flex-wrap'>
-                  <div className='flex gap-2'>
-                    <h1 className='text-2xl max-md:text-[17px] gap-1 text-[gold] text-end max-lg:mx-auto font-normal max-lg:mt-0'>
-                      {renderStars(viewProduct.rating)}
-                    </h1>
-                  </div>
-
-                  <div className='gap-2 max-md:flex-wrap text-[gray] items-center flex'>
-                    <div>
-                      {viewProduct.rates} Reating
-                    </div>
-
-                    <div>
-                      |
-                    </div>
-
-                    <div>
-                      Search this page
-                    </div>
-                  </div>
-                </div>
-
-                <hr className='border-[1.5px] border-gray-500 my-2 max-md:hidden' />
-
-                {/* offer & price */}
-                <div className=''>
-                  <div className=' text-[30px] max-md:mb-[5px]'>
-                    <span className='font-light text-red-700 '> -{viewProduct.offers} </span> <span className='font-semibold '> {viewProduct.price} </span>
-                  </div>
-                </div>
-
-                {/* MRP of product */}
-                <div className=' text-[#9A9C9C] max-md:mb-[5px]'>
-                  M.R.P. : <span className='line-through'> {viewProduct.mrp} </span>
-                </div>
-
-                <hr className='border-[1.5px] border-gray-500 my-2 max-md:hidden' />
-
-
-                {/* tax and Other */}
-                <div className='flex-wrap'>
-                  <p className='max-md:mb-[5px]'>
-                    Inclusive of all taxes
-                  </p>
-                  <p className='max-md:mb-[5px]'>
-                    EMI starts at {viewProduct.emi} per month.
-                  </p>
-                  <p className='flex gap-2 hover:underline text-[gray] hover:cursor-pointer'>
-                    <span className='font-bold'> EMI </span> options <RiArrowDropDownLine className='text-[30px]' />
-                  </p>
-                </div>
-
-                <hr className='border-[1.5px] border-gray-500 md:my-2 max-md:hidden' />
-
-                {/* Offres */}
-
-                <div>
-                  <div className='flex md:my-2 mt-4 max-md:mt-[5px] gap-5'>
-                    <MdLocalOffer className='mt-[2px] text-[20px]' /> <span className='font-bold'> Offers </span>
-                  </div>
-                  <button className="bg-black text-white max-md:mt-[5px] text-center flex justify-center mx-auto md:hidden w-[60%] mb-5 py-2 rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-white border-2">
+                  <button className="bg-black text-white mt-5 text-center justify-center flex mx-auto max-md:hidden w-[60%] py-2 rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-white border-2">
                     Buy Now
                   </button>
+
                 </div>
 
-                {/* bank offer card */}
-                <div className='grid grid-cols-2 gap-5'>
-                  <div>
-                    <div className='hover:cursor-pointer rounded-[18px] shadow-md mb-2'>
-                      <div className='p-5 max-md:text-[15px] text-[16px] flex-wrap border rounded-[15px]'>
-                        <p>
-                          Bank Offer
-                        </p>
-                        <p className='mt-2 line-clamp-2'>
-                          Upto ₹2,000.00 discount on select…
-                        </p>
-                        <p className='text-indigo-600 hover:underline flex gap-1 mt-3'>
-                          5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
-                        </p>
+                {/* visite product details */}
+                <div className='w-[60%] max-md:w-full max-md:px-2 max-md:mx-auto text-[18px]'>
+
+                  {/* link of product brand */}
+                  <p className=' my-[5px] font-semibold text-[gray]'>
+                    visite the {viewProduct.title} Store
+                  </p>
+                  {/* title of product */}
+                  <h2 className='max-md:text-2xl text-[20px] font-bold my-[10px]'>
+                    {viewProduct.fullname}
+                  </h2>
+
+                  {/* star rating */}
+                  <div className='gap-9 flex font-semibold max-md:my-[10px] max-md:flex-wrap'>
+                    <div className='flex gap-2'>
+                      <h1 className='text-2xl max-md:text-[17px] gap-1 text-[gold] text-end max-lg:mx-auto font-normal max-lg:mt-0'>
+                        {renderStars(viewProduct.rating)}
+                      </h1>
+                    </div>
+
+                    <div className='gap-2 max-md:flex-wrap text-[gray] items-center flex'>
+                      <div>
+                        {viewProduct.rates} Reating
+                      </div>
+
+                      <div>
+                        |
+                      </div>
+
+                      <div>
+                        Search this page
                       </div>
                     </div>
                   </div>
 
-                  {/* partner offer card */}
+                  <hr className='border-[1.5px] border-gray-500 my-2 max-md:hidden' />
+
+                  {/* offer & price */}
+                  <div className=''>
+                    <div className=' text-[30px] max-md:mb-[5px]'>
+                      <span className='font-light text-red-700 '> -{viewProduct.offers} </span> <span className='font-semibold '> {viewProduct.price} </span>
+                    </div>
+                  </div>
+
+                  {/* MRP of product */}
+                  <div className=' text-[#9A9C9C] max-md:mb-[5px]'>
+                    M.R.P. : <span className='line-through'> {viewProduct.mrp} </span>
+                  </div>
+
+                  <hr className='border-[1.5px] border-gray-500 my-2 max-md:hidden' />
+
+
+                  {/* tax and Other */}
+                  <div className='flex-wrap'>
+                    <p className='max-md:mb-[5px]'>
+                      Inclusive of all taxes
+                    </p>
+                    <p className='max-md:mb-[5px]'>
+                      EMI starts at {viewProduct.emi} per month.
+                    </p>
+                    <p className='flex gap-2 hover:underline text-[gray] hover:cursor-pointer'>
+                      <span className='font-bold'> EMI </span> options <RiArrowDropDownLine className='text-[30px]' />
+                    </p>
+                  </div>
+
+                  <hr className='border-[1.5px] border-gray-500 md:my-2 max-md:hidden' />
+
+                  {/* Offres */}
+
                   <div>
-                    <div className='hover:cursor-pointer rounded-[18px] shadow-md mb-5'>
-                      <div className='p-5 max-md:text-[15px] text-[16px] flex-wrap border rounded-[15px]'>
-                        <p>
-                          Partner Offer
-                        </p>
-                        <p className='mt-2 line-clamp-2'>
-                          Get GST invoice and save up to 28% on…
-                        </p>
-                        <p className='text-indigo-600 hover:underline  flex gap-1 mt-3'>
-                          5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
-                        </p>
+                    <div className='flex md:my-2 mt-4 max-md:mt-[5px] gap-5'>
+                      <MdLocalOffer className='mt-[2px] text-[20px]' /> <span className='font-bold'> Offers </span>
+                    </div>
+                    <button className="bg-black text-white max-md:mt-[5px] text-center flex justify-center mx-auto md:hidden w-[60%] mb-5 py-2 rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-white border-2">
+                      Buy Now
+                    </button>
+                  </div>
+
+                  {/* bank offer card */}
+                  <div className='grid grid-cols-2 gap-5'>
+                    <div>
+                      <div className='hover:cursor-pointer rounded-[18px] shadow-md mb-2'>
+                        <div className='p-5 max-md:text-[15px] text-[16px] flex-wrap border rounded-[15px]'>
+                          <p>
+                            Bank Offer
+                          </p>
+                          <p className='mt-2 line-clamp-2'>
+                            Upto ₹2,000.00 discount on select…
+                          </p>
+                          <p className='text-indigo-600 hover:underline flex gap-1 mt-3'>
+                            5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
+                          </p>
+                        </div>
                       </div>
                     </div>
 
+                    {/* partner offer card */}
                     <div>
+                      <div className='hover:cursor-pointer rounded-[18px] shadow-md mb-5'>
+                        <div className='p-5 max-md:text-[15px] text-[16px] flex-wrap border rounded-[15px]'>
+                          <p>
+                            Partner Offer
+                          </p>
+                          <p className='mt-2 line-clamp-2'>
+                            Get GST invoice and save up to 28% on…
+                          </p>
+                          <p className='text-indigo-600 hover:underline  flex gap-1 mt-3'>
+                            5 offers <FaGreaterThan className='text-[12px] mt-[7px] font-extralight' />
+                          </p>
+                        </div>
+                      </div>
+
+                      <div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )
+      }
       <div className="mt-[50px]">
         <Footer />
       </div>
-    </div>
+    </div >
   )
 }
 

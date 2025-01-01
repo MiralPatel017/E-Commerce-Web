@@ -25,6 +25,10 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     navigate("/LoginAndSignup");
   };
 
+  const handleCart = () => {
+    navigate("/AddToCartPage");
+  };
+
   return (
     <nav className="bg-black bgblurenav fixed top-0 text-white w-full h-[60px] md:justify-around flex items-center px-4 md:px-10 z-[50]">
       <div className="logo md:relative">
@@ -62,12 +66,13 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* on click of profile btn then open login page*/}
         <button className="block md:hidden pl-[65%] transition-all text-white text-[27px] items-center rounded-full"
-          onClick={() => handleLogin()}>
+          onClick={() => { handleLogin(), setIsMenuOpen(false) }}>
           <FaRegUserCircle />
         </button>
 
         {/* Add to cart */}
-        <button className="block md:hidden transition-all text-white text-[30px] items-center rounded-full">
+        <button className="block md:hidden transition-all text-white text-[30px] items-center rounded-full"
+          onClick={() => {handleCart() , setIsMenuOpen(false)}}>
           <LiaShoppingCartSolid />
         </button>
 
