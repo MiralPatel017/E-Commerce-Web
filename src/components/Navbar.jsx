@@ -47,7 +47,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           </button>
         </li>
         <li className="pt-[2px]">
-          <button className="transition-all text-white font-bold text-[30px] rounded-full">
+          <button className="transition-all text-white font-bold text-[30px] rounded-full"
+            onClick={() => { handleCart() }}>
             <LiaShoppingCartSolid className="" />
           </button>
         </li>
@@ -72,7 +73,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Add to cart */}
         <button className="block md:hidden transition-all text-white text-[30px] items-center rounded-full"
-          onClick={() => {handleCart() , setIsMenuOpen(false)}}>
+          onClick={() => { handleCart(), setIsMenuOpen(false) }}>
           <LiaShoppingCartSolid />
         </button>
 

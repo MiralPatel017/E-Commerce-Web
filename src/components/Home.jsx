@@ -18,7 +18,7 @@ const Home = ({ darkMode }) => {
     return (
         <div className={darkMode ? "text-white duration-300 bg-black" : "bg-white duration-300 text-black "}>
             <div className={darkMode ? "text-white duration-300 bg-black" : "bg-white duration-300 text-black "}>
-                <div className='pt-[65px] max-w-[1440px] mx-auto max-lg:px-[15px]'>
+                <div className='pt-[65px] container mx-auto max-lg:px-[15px]'>
 
                     {/* main container section */}
                     <div className='grid grid-cols-2 max-lg:grid-cols-1 max-lg:mx-auto'>

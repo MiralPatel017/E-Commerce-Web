@@ -32,9 +32,9 @@ const App = () => {
             <Route path="/AboutUs" element={<AboutUs darkMode={darkMode} />} />
             <Route path="/ContectUs" element={<ContectUs darkMode={darkMode} />} />
             <Route path="/Product" element={<Product darkMode={darkMode} />} />
-            <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} />
+            {/* <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} /> */}
             <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
-            <Route path="/AddToCartPage" element={<AddToCartPage />} />
+            <Route path="/AddToCartPage" element={<AddToCartPage darkMode={darkMode}/>} />
           </Routes>
         </main>
       </div>

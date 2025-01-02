@@ -5,6 +5,8 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoIosStar, IoIosStarOutline } from "react-icons/io";
 import { MdLocalOffer } from "react-icons/md";
 import { FaGreaterThan } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { displayLog } from '../state/displaySlice';
 
 // import { useNavigate } from 'react-router-dom'
 
@@ -61,6 +63,12 @@ const Product = ({ darkMode }) => {
     setViewProduct(null)
   }
 
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(displayLog(product));
+  }
+
   const categories = ["Shirt", "Pant", "Shoes", "Accessories", "Other"];
 
 
@@ -112,7 +120,8 @@ const Product = ({ darkMode }) => {
                     <h2 className='text-red-500 text-start max-md:text-[16px] text-lg max-lg:mx-auto'>
                       -{product.offers}
                     </h2>
-                    <button className="bg-black text-white max-md:hidden max-md:font-bold max-lg:mt-1 max-md:w-full py-2 max-lg:mx-auto rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-black border-2">
+                    <button className="bg-black text-white max-md:hidden max-md:font-bold max-lg:mt-1 max-md:w-full py-2 max-lg:mx-auto rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-black border-2"
+                      onClick={() => handleAddToCart(product)}>
                       Buy Now
                     </button>
                   </div>
