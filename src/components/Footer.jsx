@@ -12,10 +12,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-5">
                     {/* First Column */}
                     <div>
-                        <h3 className="font-bold text-[20px] mb-4 text-center md:text-left">
+                        <h3 className="font-bold text-[20px] mb-4 text-left md:text-left">
                             Product
                         </h3>
-                        <ul className="leading-8 text-center md:text-left">
+                        <ul className="leading-8 text-left md:text-left">
                             <li>Add Development</li>
                             <li>Web Development</li>
                             <li>DevOps</li>
@@ -26,10 +26,10 @@ const Footer = () => {
                     {/* Second Column */}
 
                     <div>
-                        <h3 className="font-bold text-[20px] mb-4 text-center md:text-left">
+                        <h3 className="font-bold text-[20px] mb-4 text-left md:text-left">
                             Social
                         </h3>
-                        <ul className="leading-8 text-center md:text-left">
+                        <ul className="leading-8 text-left md:text-left">
                             <li>LinkedIn</li>
                             <li>Twitter</li>
                             <li>GitHub</li>
@@ -39,10 +39,10 @@ const Footer = () => {
 
                     {/* Third Column */}
                     <div>
-                        <h3 className="font-bold text-[20px] mb-4 text-center md:text-left">
+                        <h3 className="font-bold text-[20px] mb-4 text-left md:text-left">
                             Quick Links
                         </h3>
-                        <ul className="leading-8 text-center md:text-left">
+                        <ul className="leading-8 text-left md:text-left">
                             <li>
                                 <Link to="/">Home</Link>
                             </li>
@@ -60,10 +60,10 @@ const Footer = () => {
 
                     {/* Fourth Column */}
                     <div>
-                        <h3 className="font-bold text-[20px] mb-4 text-center md:text-left">
+                        <h3 className="font-bold text-[20px] mb-4 text-left md:text-left">
                             Address
                         </h3>
-                        <ul className="leading-8 text-center md:text-left">
+                        <ul className="leading-8 text-left md:text-left">
                             <li>53, 2nd Floor, Zion Elira IT Solutions, 4D Square Mall, Motera, Ahmedabad, Gujarat - 380005</li>
                             <li>Mobile</li>
                             <li>+91 98765 43210</li>
@@ -75,7 +75,7 @@ const Footer = () => {
 
                 <hr className="my-10" />
                 <div className="text-white">
-                    <p className="text-center flex justify-center gap-3 items-center">
+                    <p className="text-left flex justify-center gap-3 items-center">
                         <FaCopyright /> 2024 Zion Elira. All Rights Reserved.
                     </p>
                 </div>

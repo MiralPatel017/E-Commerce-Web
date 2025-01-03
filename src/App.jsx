@@ -11,6 +11,9 @@ import ProductDetails from "./components/ProductDetails";
 // import LoginPage from "./components/LoginPage";
 import LoginAndSignup from "./components/LoginAndSignup";
 import AddToCartPage from "./components/AddToCartPage";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 
 const App = () => {

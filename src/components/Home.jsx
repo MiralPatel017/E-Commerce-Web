@@ -25,7 +25,6 @@ const Home = ({ darkMode }) => {
 
                         <div className='max-lg:mx-auto'>
                             <img src="mainbanner.png" className='w-[90%] max-lg:mx-auto' alt="" />
-
                         </div>
 
                         <div className=' self-center'>
@@ -53,7 +52,7 @@ const Home = ({ darkMode }) => {
                         </div>
 
                         <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:w-full max-md:gap-0 gap-[40px]'>
-                            {product.filter(item => item.category === "Shirt").slice(0, 4).map((item, index) =>
+                            {product.filter(item => item.category === "Shirt").sort(() => Math.random() - 0.5).slice(0, 4).map((item, index) =>
                             
                                 <div key={index} className='bgblur max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full'>
                                     <img src={item.imgs} className='rounded-t-[10px] bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' alt="" />
@@ -106,7 +105,7 @@ const Home = ({ darkMode }) => {
                         </div>
 
                         <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:w-full max-md:gap-0 gap-[40px]'>
-                            {product.filter(item => item.category === "Pant").slice(0, 4).map((item, index) =>
+                            {product.filter(item => item.category === "Pant").sort(() => Math.random() - 0.5).slice(0, 4).map((item, index) =>
                                 <div key={index} className='bgblur max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full'>
                                     <img src={item.imgs} className='rounded-t-[10px] bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' alt="" />
                                     <div className='px-[10px] pt-[10px] pb-[15px] bg-[#F3F3F3] text-black rounded-b-[10px] max-md:w-[96%] max-md:mx-auto border-2 border-[#F3F3F3] max-md:pt-0'>
@@ -155,7 +154,7 @@ const Home = ({ darkMode }) => {
                         </div>
 
                         <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:w-full max-md:gap-0 gap-[40px]'>
-                            {product.filter(item => item.category === "Shoes").slice(0, 4).map((item, index) =>
+                            {product.filter(item => item.category === "Shoes").sort(() => Math.random() - 0.5).slice(0, 4).map((item, index) =>
                                 <div key={index} className='bgblur max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full'>
                                     <img src={item.imgs} className='rounded-t-[10px] bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' alt="" />
                                     <div className='px-[10px] pt-[10px] pb-[15px] bg-[#F3F3F3] text-black rounded-b-[10px] max-md:w-[96%] max-md:mx-auto border-2 border-[#F3F3F3] max-md:pt-0'>
@@ -207,7 +206,7 @@ const Home = ({ darkMode }) => {
                         </div>
 
                         <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:w-full max-md:gap-0 gap-[40px]'>
-                            {product.filter(item => item.category === "Accessories").slice(0, 4).map((item, index) =>
+                            {product.filter(item => item.category === "Accessories").sort(() => Math.random() - 0.5).slice(0, 4).map((item, index) =>
                                 <div key={index} className='bgblur max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full'>
                                     <img src={item.imgs} className='rounded-t-[10px] bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' alt="" />
                                     <div className='px-[10px] pt-[10px] pb-[15px] bg-[#F3F3F3] text-black rounded-b-[10px] max-md:w-[96%] max-md:mx-auto border-2 border-[#F3F3F3] max-md:pt-0'>

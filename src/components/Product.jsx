@@ -100,7 +100,7 @@ const Product = ({ darkMode }) => {
         </div>
 
         <div className="grid md:gap-10 grid-cols-4 max-lg:grid-cols-2 max-md:px-2 pt-[50px] max-w-[1440px] w-full md:mx-auto">
-          {filteredItems.map((product, id) => (
+          {filteredItems.sort(() => Math.random() - 0.5).map((product, id) => (
             <div key={id} className='max-md:mt-[7px] rounded-[10px] max-md:mx-0 max-md:w-full '>
               <img src={product.imgs} onClick={() => viewDatails(product)}
                 alt={product.title} className='rounded-t-[10px] cursor-pointer bg-[#F3F3F3] max-md:w-[96%] mx-auto border-2 border-[#F3F3F3]' />
@@ -145,17 +145,19 @@ const Product = ({ darkMode }) => {
       {/* View Product Details */}
       {
         viewProduct && (
-          <div className={darkMode ? " text-white z-20 max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-90" : "bg-black z-20 max-md:overflow-y-auto max-md:h-full text-black fixed inset-0 flex justify-center items-center md:bg-opacity-85"}>
+          <div className={darkMode ? " text-white z-[50] max-md:overflow-y-auto bg-black overflow-x-hidden justify-center items-center fixed inset-0 flex md:bg-opacity-75 popblur max-md:h-full" 
+          : "bg-black z-[50] max-md:overflow-y-auto text-black fixed inset-0 flex justify-center items-center md:bg-opacity-75 popblur max-md:h-full"}>
 
-            <div className='w-full pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none max-md:pt-[10px]  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full'>
+            <div className={darkMode ? 'w-full max-md:h-full bg-[#121212] pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto ' 
+               :'w-full pt-auto rounded-[20px] md:mt-[30px] max-md:rounded-none  max-w-[800px] bg-opacity-100  md:justify-center md:items-center max-md:relative px-6 max-md:px-2 mx-auto max-md:h-full bg-[#ededed] max-md:h-full'}>
 
               {/* close button */}
-              <div className='pl-[90%] max-md:pt-[80px] max-md:pl-[90%] md:mt-[20px]'>
+              <div className='pl-[90%] max-md:pt-[20px] max-md:pl-[90%] md:mt-[20px]'>
                 <button
-                  className=' bg-red-600  text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] p-[10px] px-[18px] font-bold hover:bg-red-700 rounded-full mb-[20px]'
+                  className=' bg-red-600 text-white max-md:w-fit max-md:px-[10px] max-md:py-[5px] max-md:text-[16px] max-md:p-[10px] w-1/2 pb-1 font-bold hover:bg-red-700 rounded-full mb-[20px]'
                   onClick={closeModel}
                 >
-                  X
+                  x
                 </button>
               </div>
               <div className='overflow-y-auto gap-10 max-md:flex-wrap max-md:justify-center flex'>
@@ -209,7 +211,7 @@ const Product = ({ darkMode }) => {
                   {/* offer & price */}
                   <div className=''>
                     <div className=' text-[30px] max-md:mb-[5px]'>
-                      <span className='font-light text-red-700 '> -{viewProduct.offers} </span> <span className='font-semibold '> {viewProduct.price} </span>
+                      <span className='font-light text-red-700 '> -{viewProduct.offers} </span> <span className='font-semibold '> {"$"}{viewProduct.price} </span>
                     </div>
                   </div>
 

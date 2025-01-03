@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { LuSun } from 'react-icons/lu';
 import { HiOutlineBars3BottomRight } from "react-icons/hi2";
 import { FaMoon } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LiaShoppingCartSolid } from "react-icons/lia";
-import { FaGripLinesVertical } from "react-icons/fa6";
-
-import { FaLinkedin } from "react-icons/fa";
+import { IoMdSearch } from "react-icons/io";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -17,7 +15,23 @@ import { useNavigate } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ darkMode, setDarkMode }) => {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
 
   const navigate = useNavigate();
 
@@ -30,32 +44,46 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   };
 
   return (
-    <nav className="bg-black bgblurenav fixed top-0 text-white w-full h-[60px] md:justify-around flex items-center px-4 md:px-10 z-[50]">
+    <nav className=" bgblurenav fixed top-0 text-white w-full h-[60px] md:justify-around flex items-center px-4 md:px-10 z-[50]">
       <div className="logo md:relative">
         <img src="letter-m.png" alt="logo" className="w-[40px] bg-white rounded-full border-transparent" />
       </div>
 
-      <ul className="hidden md:flex gap-5 text-center right-1 relative lg:ml-[60%] md:ml-[25%] items-center">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/AboutUs">About Us</Link></li>
-        <li><Link to="/Product">Product</Link></li>
-        <li><Link to="/ContectUs">Contact Us</Link></li>
-        <li className="pt-[3px]">
-          <button className="transition-all text-white text-[25px] rounded-full"
-            onClick={() => handleLogin()}>
+      <ul className="hidden lg:flex items-center w-full">
+        {/* Left-aligned navigation links */}
+        <li className="flex-grow w-full flex space-x-6 justify-start items-center ml-5 ">
+          <Link to="/">Home</Link>
+          <Link to="/AboutUs">About Us</Link>
+          <Link to="/Product">Product</Link>
+          <Link to="/ContectUs">Contact Us</Link>
+        </li>
+
+        {/* Right-aligned buttons */}
+        <li className="flex space-x-3 mr-[3%] items-center">
+
+          {/* Search button */}
+          <input type="text" placeholder="" className="bg-white text-black relative bg-transparent border border-[#ededed] focus:border-[#ededed] focus:border pl-10 h-9 pr-5 py-2 w-full rounded-[20px]" />
+          <IoMdSearch className="text-[20px] text-[#292929] absolute ml-10" />
+
+          {/* User profile */}
+          <button
+            className="transition-all w-fit text-white text-[25px] rounded-full"
+            onClick={() => handleLogin()}
+          >
             <FaRegUserCircle />
           </button>
-        </li>
-        <li className="pt-[2px]">
-          <button className="transition-all text-white font-bold text-[30px] rounded-full"
-            onClick={() => { handleCart() }}>
+
+          {/* Cart */}
+          <button
+            className="transition-all text-white font-bold text-[30px] rounded-full"
+            onClick={() => handleCart()}
+          >
             <LiaShoppingCartSolid className="" />
           </button>
-        </li>
-        <li>
-          {/* dark and light mode button */}
+
+          {/* Dark and light mode button */}
           <button
-            className="text-[25px] z-10 max-md:hidden lg:right-[50px]"
+            className="text-[25px]"
             onClick={() => setDarkMode(!darkMode)}
           >
             {darkMode ? <LuSun /> : <FaMoon className="text-[20px]" />}
@@ -63,10 +91,16 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         </li>
       </ul>
 
-      <div className="max-md:flex gap-3 text-[35px] absolute right-[90px]">
+
+      {/* in mobile */}
+      <div className="max-md:flex lg:hidden gap-3 text-[35px] absolute right-[15px]">
+
+        {/* Search button
+        <input type="text" placeholder="" className="bg-white text-black text-base relative bg-transparent border border-[#ededed] focus:border-[#ededed] focus:border pl-8 h-9 pr-2 py-2 w-[100px] rounded-[20px]" />
+        <IoMdSearch className="text-[20px] text-[#292929] absolute ml-2  mt-2" /> */}
 
         {/* on click of profile btn then open login page*/}
-        <button className="block md:hidden pl-[65%] transition-all text-white text-[27px] items-center rounded-full"
+        <button className="block md:hidden max-w-full transition-all text-white text-[27px] items-center rounded-full"
           onClick={() => { handleLogin(), setIsMenuOpen(false) }}>
           <FaRegUserCircle />
         </button>
