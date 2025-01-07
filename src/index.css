@@ -98,3 +98,14 @@
 .flip-container .back {
     transform: rotateY(180deg);
 }
+
+.paymentblur{
+    backdrop-filter: blur(2px);
+}
+
+.shoppingbg{
+    background-image: url('shopping-bag2.png');
+    background-size: 100%;
+    background-position: bottom;    
+    background-repeat: no-repeat;
+}

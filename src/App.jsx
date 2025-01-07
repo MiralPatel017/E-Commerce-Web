@@ -14,6 +14,8 @@ import AddToCartPage from "./components/AddToCartPage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ChackOutPage from "./components/ChackOutPage";
+import PaymentMethodPage from "./components/PaymentMethodPage";
+import OrderSummaryPage from "./components/OrderSummaryPage";
 
 
 
@@ -38,8 +40,10 @@ const App = () => {
             <Route path="/Product" element={<Product darkMode={darkMode} />} />
             {/* <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} /> */}
             <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
-            <Route path="/AddToCartPage" element={<AddToCartPage darkMode={darkMode}/>} />
-            <Route path="/ChackOutPage" element={<ChackOutPage darkMode={darkMode}/>} />
+            <Route path="/AddToCartPage" element={<AddToCartPage darkMode={darkMode} />} />
+            <Route path="/ChackOutPage" element={<ChackOutPage darkMode={darkMode} />} />
+            <Route path="/PaymentMethodPage" element={<PaymentMethodPage darkMode={darkMode} />} />
+            <Route path="/OrderSummaryPage" element={<OrderSummaryPage darkMode={darkMode} />} />
           </Routes>
         </main>
       </div>

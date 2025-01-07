@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import ProductList from "./ProductList.json";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Footer from './Footer';
+import { useNavigate } from "react-router-dom";
 
 
 const AddToCartPage = ({ darkMode }) => {
@@ -16,6 +17,12 @@ const AddToCartPage = ({ darkMode }) => {
   const [showInput, setShowInput] = React.useState(false);
 
   const product = ProductList.products
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/ChackOutPage");
+  };
 
   // Custom Next Arrow
   const CustomNextArrow = ({ onClick }) => (
@@ -82,7 +89,8 @@ const AddToCartPage = ({ darkMode }) => {
         {/* product list and order summary */}
         <div className='flex mt-5 max-md:flex-wrap lg:space-x-5'>
 
-          <div className={darkMode ? 'w-[70%] max-md:w-full h-[500px] overflow-y-auto rounded-lg px-5 space-y-5 dark-custom-scrollbar' : 'w-[70%] max-md:w-full h-[500px] overflow-y-auto rounded-lg px-5 space-y-5 custom-scrollbar'}>
+          <div className={darkMode ? 'w-[70%] max-md:w-full max-h-[500px] overflow-y-auto rounded-lg px-5 space-y-5 dark-custom-scrollbar' 
+            : 'w-[70%] max-md:w-full max-h-[500px] overflow-y-auto rounded-lg px-5 space-y-5 custom-scrollbar'}>
 
             {/* first product */}
             <div className={darkMode ? 'border-x-0 border-[#ededed] bg-[#292929] border p-5' : 'border-x-0 border-[gray] bg-[#ededed] border p-5'}>
@@ -286,7 +294,8 @@ const AddToCartPage = ({ darkMode }) => {
               </div>
 
               <button className={darkMode ? 'w-full bg-[#ededed] text-xl text-[#292929] p-3 rounded-lg mt-5 hover:border-[#ededed] hover:border hover:text-[#ededed] hover:bg-[#292929] duration-75'
-                : 'w-full bg-[#292929] text-white p-3 rounded-lg mt-5  text-xl hover:border-[#292929] hover:border hover:text-[#292929] hover:bg-[#ededed] duration-75'}>
+                : 'w-full bg-[#292929] text-white p-3 rounded-lg mt-5  text-xl hover:border-[#292929] hover:border hover:text-[#292929] hover:bg-[#ededed] duration-75'}
+                onClick={handleCheckout}>
                 Checkout
               </button>
 
@@ -416,6 +425,8 @@ const AddToCartPage = ({ darkMode }) => {
         </div>
       </div>
 
+
+
       {/* on mobile and tablet */}
       <div className='lg:hidden flex-wrap pt-[70px] mx-3 max-lg:block'>
 
@@ -429,7 +440,8 @@ const AddToCartPage = ({ darkMode }) => {
         {/* product list and order summary */}
         <div className='mt-5 lg:space-x-5'>
 
-          <div className={darkMode ? 'w-full h-[480px] overflow-y-auto pr-3 space-y-5 dark-custom-scrollbar' : 'w-full h-[480px] overflow-y-auto pr-3 space-y-5 custom-scrollbar'}>
+          <div className={darkMode ? 'w-full max-h-[480px] overflow-y-auto pr-3 space-y-5 dark-custom-scrollbar' 
+            : 'w-full max-h-[480px] overflow-y-auto pr-3 space-y-5 custom-scrollbar'}>
 
             {/* first product */}
             <div className={darkMode ? 'border-x-0 border-[#ededed] bg-[#292929] border p-5'
@@ -652,7 +664,8 @@ const AddToCartPage = ({ darkMode }) => {
               </div>
 
               <button className={darkMode ? 'w-full bg-[#ededed] text-[#292929] p-3 rounded-lg mt-5 hover:border-[#ededed] hover:border hover:text-[#ededed] hover:bg-[#292929] duration-75'
-                : 'w-full bg-[#292929] text-white p-3 rounded-lg mt-5 hover:border-[#292929] hover:border hover:text-[#292929] hover:bg-[#ededed] duration-75'}>
+                : 'w-full bg-[#292929] text-white p-3 rounded-lg mt-5 hover:border-[#292929] hover:border hover:text-[#292929] hover:bg-[#ededed] duration-75'}
+                onClick={handleCheckout}>
                 Checkout
               </button>
 
@@ -718,7 +731,7 @@ const AddToCartPage = ({ darkMode }) => {
                       </div>
                       <div className='grid grid-cols-2 mt-3 max-md:grid-cols-1 max-md:mt-0'>
                         <h2 className='text-[#668] text-start max-md:text-[16px] text-lg max-lg:mx-auto'>
-                        {"$"}{item.price}
+                          {"$"}{item.price}
                         </h2>
                         <button className="bg-black text-white max-md:w-[60%] text-base max-md:font-bold max-lg:mt-1 py-2 max-lg:mx-auto rounded-[10px] duration-300 font-semibold hover:bg-white hover:text-black border-black border-2">
                           Add to Cart
@@ -789,7 +802,7 @@ const AddToCartPage = ({ darkMode }) => {
       <div className='mt-[50px]'>
         <Footer />
       </div>
-    </div>
+    </div >
   )
 }
 export default AddToCartPage

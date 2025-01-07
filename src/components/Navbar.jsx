@@ -62,7 +62,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         <li className="flex space-x-3 mr-[3%] items-center">
 
           {/* Search button */}
-          <input type="text" placeholder="" className="bg-white text-black relative bg-transparent border border-[#ededed] focus:border-[#ededed] focus:border pl-10 h-9 pr-5 py-2 w-full rounded-[20px]" />
+          <input type="text" placeholder="Search" className="bg-white text-black relative bg-transparent border border-[#ededed] focus:border-[#ededed] focus:border pl-10 h-9 pr-5 py-2 w-full rounded-[20px]" />
           <IoMdSearch className="text-[20px] text-[#292929] absolute ml-10" />
 
           {/* User profile */}
