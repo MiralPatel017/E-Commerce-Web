@@ -13,6 +13,7 @@ import LoginAndSignup from "./components/LoginAndSignup";
 import AddToCartPage from "./components/AddToCartPage";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ChackOutPage from "./components/ChackOutPage";
 
 
 
@@ -38,6 +39,7 @@ const App = () => {
             {/* <Route path="/Product/:id" element={<DetailsPage darkMode={darkMode} />} /> */}
             <Route patth="/ProductDetails" element={<ProductDetails darkMode={darkMode} />} />
             <Route path="/AddToCartPage" element={<AddToCartPage darkMode={darkMode}/>} />
+            <Route path="/ChackOutPage" element={<ChackOutPage darkMode={darkMode}/>} />
           </Routes>
         </main>
       </div>

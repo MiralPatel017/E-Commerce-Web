@@ -104,12 +104,12 @@ const AddToCartPage = ({ darkMode }) => {
                 <div className='my-auto'>
                   <div className="flex space-x-5">
                     <div className="flex items-center space-x-2">
-                      <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                      <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                         onClick={() => { }}>
                         <FaMinus />
                       </button>
-                      <p className="text-lg font-bold"> 1 </p>
-                      <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                      <p className="text-lg font-semibold"> 1 </p>
+                      <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                         onClick={() => { }}>
                         <FaPlus />
                       </button>
@@ -149,12 +149,12 @@ const AddToCartPage = ({ darkMode }) => {
                 <div className='my-auto'>
                   <div className="flex space-x-5">
                     <div className="flex items-center space-x-2">
-                      <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                      <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                         onClick={() => { }}>
                         <FaMinus />
                       </button>
                       <p className="text-lg font-bold"> 1 </p>
-                      <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                      <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                         onClick={() => { }}>
                         <FaPlus />
                       </button>
@@ -194,12 +194,12 @@ const AddToCartPage = ({ darkMode }) => {
                 <div className='my-auto'>
                   <div className="flex space-x-5">
                     <div className="flex items-center space-x-2">
-                      <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                      <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                         onClick={() => { }}>
                         <FaMinus />
                       </button>
                       <p className="text-lg font-bold"> 1 </p>
-                      <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                      <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                         onClick={() => { }}>
                         <FaPlus />
                       </button>
@@ -457,12 +457,12 @@ const AddToCartPage = ({ darkMode }) => {
                     <div className='flex'>
                       {/* Quantity */}
                       <div className="flex items-center space-x-2">
-                        <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                        <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                           onClick={() => { }}>
                           <FaMinus />
                         </button>
                         <p className="text-lg font-bold"> 1 </p>
-                        <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                        <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                           onClick={() => { }}>
                           <FaPlus />
                         </button>
@@ -506,12 +506,12 @@ const AddToCartPage = ({ darkMode }) => {
                     <div className='flex'>
                       {/* Quantity */}
                       <div className="flex items-center space-x-2">
-                        <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                        <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                           onClick={() => { }}>
                           <FaMinus />
                         </button>
                         <p className="text-lg font-bold"> 1 </p>
-                        <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                        <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                           onClick={() => { }}>
                           <FaPlus />
                         </button>
@@ -555,12 +555,12 @@ const AddToCartPage = ({ darkMode }) => {
                     <div className='flex'>
                       {/* Quantity */}
                       <div className="flex items-center space-x-2">
-                        <button className="bg-[#757575] text-white text-xs p-[6px] rounded-md"
+                        <button className="bg-[#b5b5b5] text-white text-xs p-[6px] rounded-md"
                           onClick={() => { }}>
                           <FaMinus />
                         </button>
                         <p className="text-lg font-bold"> 1 </p>
-                        <button className=" bg-[#757575] text-white p-[6px] text-xs rounded-md"
+                        <button className=" bg-[#b5b5b5] text-white p-[6px] text-xs rounded-md"
                           onClick={() => { }}>
                           <FaPlus />
                         </button>
